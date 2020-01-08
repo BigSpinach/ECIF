@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>利用 get 拦截 实现 一个 生成 各种 DOM 节点 的 通用 函数 dom</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+  const dom = new Proxy({},{
+    get(target,property){
+      return function(attrs={},...children){
+        const el = document.createElement(property);
+        for(let prop of Object.keys(attrs)){
+          el.setAttribute(prop,attrs[prop]);
+        }
+
+        for(let child of children){
+          if(typeof child === "string"){
+            child = document.createTextNode(child);
+          }
+          el.appendChild(child);
+        }
+
+        return el;
+      }
+    }
+  });
+
+
+  //test
+  //创建一个div 元素，div有自定义属性id="xxoo"，div元素的里边有一个a元素作为子元素
+  const myDiv = dom.div({id:"xxoo"},dom.a({href:"javascript:;"},"点我啊"),"嘻嘻嘻嘻嘻","哈哈哈哈");
+
+  document.body.appendChild(myDiv);
+</script>
+</html>
