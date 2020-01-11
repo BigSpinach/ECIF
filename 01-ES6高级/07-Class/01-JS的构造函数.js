@@ -16,12 +16,12 @@ console.log(m.add());//5
 
 // es5中没有类 用构造函数来模拟类
 
-// 类中有两种属性 1) 实例上的属性  2） 公共属性
+// 类中有两种属性 1) 实例上的属性  2) 公共属性
 // function Animal(){
 //     if(!(this instanceof Animal)){ // 当前是不是通过new来调用的
 //         throw new Error('NOT NEW')
 //     }
-//     this.name = {name:'zf'};
+//     this.name = {name:'bigS'};
 //     this.age = 10;
 // }
 // Animal.prototype.say  =function(){
