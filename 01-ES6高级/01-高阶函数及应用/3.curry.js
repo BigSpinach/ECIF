@@ -26,7 +26,10 @@ console.log('----------我是分隔线---------------'); {
   console.log(isString('abc'));
 }
 
-console.log('----------我是分隔线---------------'); {
+console.log('----------我是分隔线---------------'); 
+
+
+{
   const checkType = (type) => {
     //预处理这个 type
     return (content) => {

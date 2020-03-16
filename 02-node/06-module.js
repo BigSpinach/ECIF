@@ -1,4 +1,4 @@
-// module 模块
+123456// module 模块
 // node中js文件就是一个模块
 // 为什么出现模块的概念 防止命名冲突，可以把同样的功能封装到一起
 // esModule commonjs规范
